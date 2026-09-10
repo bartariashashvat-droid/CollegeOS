@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollegeOS — Student Productivity & College Management Dashboard</title>
+  <meta name="description" content="All-in-one student productivity SaaS: attendance & bunk calculator, timetable, academics, CGPA simulator, assignments kanban, exams, and placement preparation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">
+          <div class="brand-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <span>CollegeOS</span>
+        </div>
+        <span class="brand-badge">SaaS</span>
+      </div>
+
+      <nav class="nav-menu">
+        <div class="nav-section-title">Core Management</div>
+        
+        <div class="nav-item active" data-view-target="dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">1</span>
+        </div>
+
+        <div class="nav-item" data-view-target="timetable">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Timetable</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">2</span>
+        </div>
+
+        <div class="nav-item" data-view-target="attendance">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+          <span>Attendance & Bunks</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">3</span>
+        </div>
+
+        <div class="nav-item" data-view-target="academics">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <span>Academics & CGPA</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">4</span>
+        </div>
+
+        <div class="nav-section-title" style="margin-top: 0.5rem;">Productivity & Career</div>
+
+        <div class="nav-item" data-view-target="assignments">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          <span>Assignments Hub</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">5</span>
+        </div>
+
+        <div class="nav-item" data-view-target="exams">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Exams Schedule</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">6</span>
+        </div>
+
+        <div class="nav-item" data-view-target="placements">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Placements & Prep</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">7</span>
+        </div>
+
+        <div class="nav-item" data-view-target="focus">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Focus & Pomodoro</span>
+          <span class="kbd-shortcut" style="margin-left:auto;">8</span>
+        </div>
+
+        <div class="nav-item" data-view-target="settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Settings & Backup</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet" onclick="collegeApp.navigateTo('settings')">
+          <div class="user-avatar" id="sidebar-user-avatar">SB</div>
+          <div class="user-info">
+            <span class="user-name" id="sidebar-user-name">Shashvat Bartaria</span>
+            <span class="user-sub" id="sidebar-user-sub">B.Tech CSE • Sem 5</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-wrapper">
+
+      <!-- Top Glass Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="icon-btn mobile-sidebar-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+
+          <button class="command-bar-btn" id="command-palette-trigger">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>Search or jump to...</span>
+            <span class="kbd-shortcut">⌘K</span>
+          </button>
+        </div>
+
+        <div class="header-right">
+          <div class="header-pomodoro-pill" id="header-pomodoro-pill" title="Jump to Focus Timer">
+            <span class="pomo-pulse" id="header-pomo-pulse"></span>
+            <span id="header-pomo-text">Focus: 25:00</span>
+          </div>
+
+          <button class="icon-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+          </button>
+
+          <button class="icon-btn" onclick="collegeApp.openShortcutsModal()" title="Keyboard Shortcuts (?)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Views Body -->
+      <div class="content-body">
+
+        <!-- ================= VIEW: DASHBOARD ================= -->
+        <section id="view-dashboard" class="view-section active">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1 id="dashboard-greeting">Good morning, Shashvat 👋</h1>
+              <p class="view-subtitle" id="dashboard-subtitle">Apex Institute of Technology • Computer Science & Engineering</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-secondary btn-sm" onclick="collegeApp.openAddAssignmentModal()">
+                + New Task
+              </button>
+              <button class="btn btn-primary btn-sm" onclick="collegeApp.navigateTo('focus')">
+                ⚡ Focus Sprint
+              </button>
+            </div>
+          </div>
+
+          <!-- Next Up Class Live Card -->
+          <div id="dash-next-class-container"></div>
+
+          <!-- Top Stats Metrics Row -->
+          <div class="grid-stats">
+            <div class="stat-card" style="--card-accent: var(--success);">
+              <div class="stat-header">
+                <span>Attendance Health</span>
+                <div class="stat-icon" style="--stat-icon-bg: var(--success-light); --stat-icon-color: var(--success);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+                </div>
+              </div>
+              <div class="stat-value-group">
+                <span class="stat-value" id="dash-stat-attendance-val">84.2%</span>
+                <span class="stat-unit">overall</span>
+              </div>
+              <div class="stat-meta" id="dash-stat-attendance-meta">
+                <span class="badge badge-success">All Safe</span>
+              </div>
+            </div>
+
+            <div class="stat-card" style="--card-accent: var(--primary);">
+              <div class="stat-header">
+                <span>Cumulative CGPA</span>
+                <div class="stat-icon" style="--stat-icon-bg: var(--primary-light); --stat-icon-color: var(--primary);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                </div>
+              </div>
+              <div class="stat-value-group">
+                <span class="stat-value" id="dash-stat-cgpa-val">8.68</span>
+                <span class="stat-unit">/ 10</span>
+              </div>
+              <div class="stat-meta" id="dash-stat-cgpa-meta">Target: 8.8 (+0.12)</div>
+            </div>
+
+            <div class="stat-card" style="--card-accent: var(--warning);">
+              <div class="stat-header">
+                <span>Active Assignments</span>
+                <div class="stat-icon" style="--stat-icon-bg: var(--warning-light); --stat-icon-color: var(--warning);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+              </div>
+              <div class="stat-value-group">
+                <span class="stat-value" id="dash-stat-asg-val">3</span>
+                <span class="stat-unit">tasks</span>
+              </div>
+              <div class="stat-meta" id="dash-stat-asg-meta">
+                <span class="badge badge-danger">1 Urgent</span>
+              </div>
+            </div>
+
+            <div class="stat-card" style="--card-accent: #a855f7;">
+              <div class="stat-header">
+                <span>Placement Pipeline</span>
+                <div class="stat-icon" style="--stat-icon-bg: rgba(168, 85, 247, 0.12); --stat-icon-color: #a855f7;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                </div>
+              </div>
+              <div class="stat-value-group">
+                <span class="stat-value" id="dash-stat-place-val">5</span>
+                <span class="stat-unit">active</span>
+              </div>
+              <div class="stat-meta" id="dash-stat-place-meta">
+                <span class="badge badge-success">1 Offer In Hand</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Split: Attendance Radar + Upcoming Deadlines -->
+          <div class="grid-2col">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+                  Subject Attendance & Bunk Radar
+                </h3>
+                <button class="btn btn-secondary btn-sm" onclick="collegeApp.navigateTo('attendance')">View All</button>
+              </div>
+              <div id="dash-attendance-list"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Upcoming Deadlines & Exams
+                </h3>
+                <button class="btn btn-secondary btn-sm" onclick="collegeApp.navigateTo('assignments')">Kanban</button>
+              </div>
+              <div id="dash-deadlines-list"></div>
+            </div>
+          </div>
+
+          <!-- Today's Schedule Overview -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Today's Class Schedule
+              </h3>
+              <button class="btn btn-secondary btn-sm" onclick="collegeApp.navigateTo('timetable')">Full Timetable</button>
+            </div>
+            <div id="dash-today-schedule"></div>
+          </div>
+        </section>
+
+        <!-- ================= VIEW: TIMETABLE ================= -->
+        <section id="view-timetable" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Timetable & Schedule Hub</h1>
+              <p class="view-subtitle">Interactive weekly schedule with one-click attendance logging and conflict alerts.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-primary" onclick="collegeApp.openAddTimetableSlotModal()">
+                + Add Class Slot
+              </button>
+            </div>
+          </div>
+
+          <!-- Day Tabs Selector -->
+          <div class="timetable-day-selector" id="timetable-day-selector"></div>
+
+          <!-- Daily Slots List -->
+          <div class="timetable-slots-list" id="timetable-slots-list"></div>
+        </section>
+
+        <!-- ================= VIEW: ATTENDANCE & BUNK PREDICTOR ================= -->
+        <section id="view-attendance" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Attendance & Smart Bunk Predictor</h1>
+              <p class="view-subtitle">Course-by-course attendance tracker with mathematical bunk and catch-up forecasting.</p>
+            </div>
+          </div>
+
+          <!-- Overall Summary Banner -->
+          <div class="card" id="attendance-overall-banner" style="margin-bottom: 1.75rem;"></div>
+
+          <!-- Course Attendance Cards Grid -->
+          <div class="attendance-grid" id="attendance-cards-grid"></div>
+        </section>
+
+        <!-- ================= VIEW: ACADEMICS & CGPA ================= -->
+        <section id="view-academics" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Academics & CGPA Planner</h1>
+              <p class="view-subtitle">Track semester GPAs, simulate target CGPA feasibility, and monitor syllabus coverage.</p>
+            </div>
+          </div>
+
+          <!-- Cumulative CGPA Hero -->
+          <div class="card" id="academics-cgpa-hero" style="margin-bottom: 1.5rem;"></div>
+
+          <!-- Target Simulator Box -->
+          <div id="academics-simulator-box"></div>
+
+          <!-- 2-Col: Semesters History + Syllabus Checklist -->
+          <div class="grid-2col">
+            <div>
+              <h2 style="font-size: 1.15rem; margin-bottom: 1rem;">Semester Grade History</h2>
+              <div id="academics-semesters-list"></div>
+            </div>
+
+            <div>
+              <h2 style="font-size: 1.15rem; margin-bottom: 1rem;">Course Syllabus Tracker</h2>
+              <div id="academics-syllabus-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VIEW: ASSIGNMENTS ================= -->
+        <section id="view-assignments" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Assignments & Tasks Hub</h1>
+              <p class="view-subtitle">Kanban workflow for student assignments, lab submissions, and term projects.</p>
+            </div>
+            <div class="view-actions">
+              <div style="display: flex; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 0.2rem;">
+                <button class="btn btn-sm btn-secondary" onclick="collegeApp.setAssignmentViewMode('kanban')">Kanban</button>
+                <button class="btn btn-sm btn-secondary" onclick="collegeApp.setAssignmentViewMode('list')">List</button>
+              </div>
+              <button class="btn btn-primary" onclick="collegeApp.openAddAssignmentModal()">
+                + New Assignment
+              </button>
+            </div>
+          </div>
+
+          <!-- Kanban / List Container -->
+          <div id="assignments-container"></div>
+        </section>
+
+        <!-- ================= VIEW: EXAMS ================= -->
+        <section id="view-exams" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Exams & Test Schedule</h1>
+              <p class="view-subtitle">Mid-terms, end-terms, lab practicals, countdown timers, and revision checklists.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-primary" onclick="collegeApp.openAddExamModal()">
+                + Schedule Exam
+              </button>
+            </div>
+          </div>
+
+          <!-- Exams Grid -->
+          <div class="grid-stats" id="exams-grid"></div>
+        </section>
+
+        <!-- ================= VIEW: PLACEMENTS & CAREER ================= -->
+        <section id="view-placements" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Placement & Career Accelerator</h1>
+              <p class="view-subtitle">Job & internship application pipeline, DSA problem tracker, and quick links vault.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-primary" onclick="collegeApp.openAddPlacementModal()">
+                + Log Application
+              </button>
+            </div>
+          </div>
+
+          <!-- Top DSA Stats Widget -->
+          <div class="card" style="margin-bottom: 1.75rem;">
+            <div class="card-header">
+              <h3 class="card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                Data Structures & Algorithms Tracker
+              </h3>
+              <div style="display: flex; gap: 0.5rem;" id="placements-quick-links">
+                <a class="btn btn-secondary btn-sm" id="vault-resume-link" target="_blank" rel="noopener">📄 Resume</a>
+                <a class="btn btn-secondary btn-sm" id="vault-leetcode-link" target="_blank" rel="noopener">💻 LeetCode</a>
+                <a class="btn btn-secondary btn-sm" id="vault-github-link" target="_blank" rel="noopener">🐙 GitHub</a>
+              </div>
+            </div>
+
+            <div class="grid-stats" style="margin-bottom: 1rem;">
+              <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--success); font-weight: 700; text-transform: uppercase;">Easy</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary);" id="dsa-easy-count">84</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--warning); font-weight: 700; text-transform: uppercase;">Medium</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary);" id="dsa-med-count">116</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--danger); font-weight: 700; text-transform: uppercase;">Hard</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary);" id="dsa-hard-count">24</div>
+              </div>
+              <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--primary); font-weight: 700; text-transform: uppercase;">Total Solved</div>
+                <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary);" id="dsa-total-count">224</div>
+              </div>
+            </div>
+
+            <h4 style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-secondary);">Core Topic Coverage</h4>
+            <div class="dsa-category-list" id="dsa-topic-list"></div>
+          </div>
+
+          <!-- Application Pipeline Kanban -->
+          <h2 style="font-size: 1.15rem; margin-bottom: 1rem;">Application Pipeline</h2>
+          <div id="placements-kanban"></div>
+        </section>
+
+        <!-- ================= VIEW: FOCUS & POMODORO ================= -->
+        <section id="view-focus" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Focus & Deep Work Zone</h1>
+              <p class="view-subtitle">Built-in Pomodoro timer, ambient background audio synthesizer, and quick scratchpad.</p>
+            </div>
+          </div>
+
+          <div class="grid-2col">
+            <!-- Left: Pomodoro Center -->
+            <div class="card pomodoro-container">
+              <div class="pomo-mode-selector">
+                <button class="pomo-mode-btn active" data-pomo-mode="work" onclick="collegeApp.setPomodoroMode('work')">Deep Work (25m)</button>
+                <button class="pomo-mode-btn" data-pomo-mode="shortBreak" onclick="collegeApp.setPomodoroMode('shortBreak')">Short Break (5m)</button>
+                <button class="pomo-mode-btn" data-pomo-mode="longBreak" onclick="collegeApp.setPomodoroMode('longBreak')">Long Break (15m)</button>
+              </div>
+
+              <div class="pomodoro-timer-display" id="pomodoro-main-display">25:00</div>
+
+              <div class="pomo-controls">
+                <button class="btn btn-primary" id="pomo-play-btn" style="min-width: 120px; font-size: 1rem; padding: 0.75rem 1.5rem;" onclick="collegeApp.togglePomodoro()">
+                  Start
+                </button>
+                <button class="btn btn-secondary" onclick="collegeApp.resetPomodoro()">
+                  Reset
+                </button>
+              </div>
+
+              <!-- Ambient Audio Synthesizer Controls -->
+              <div class="ambient-sound-board">
+                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Ambient Sound:</span>
+                <button class="btn btn-secondary btn-sm ambient-btn" data-ambient="rain" onclick="collegeApp.toggleAmbient('rain')">
+                  🌧️ Gentle Rain
+                </button>
+                <button class="btn btn-secondary btn-sm ambient-btn" data-ambient="brown" onclick="collegeApp.toggleAmbient('brown')">
+                  🌊 Brown Noise
+                </button>
+                <button class="btn btn-secondary btn-sm ambient-btn" data-ambient="cafe" onclick="collegeApp.toggleAmbient('cafe')">
+                  ☕ Cafe Hum
+                </button>
+              </div>
+
+              <div style="display: flex; justify-content: space-around; width: 100%; margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Today's Focus</div>
+                  <div style="font-size: 1.25rem; font-weight: 700;" id="focus-today-minutes">85m</div>
+                </div>
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Daily Streak</div>
+                  <div style="font-size: 1.25rem; font-weight: 700; color: #f59e0b;" id="focus-streak-days">7 days</div>
+                </div>
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Sessions Done</div>
+                  <div style="font-size: 1.25rem; font-weight: 700; color: var(--primary);" id="focus-completed-count">3</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Quick Scratchpad & Notes -->
+            <div class="card" style="display: flex; flex-direction: column;">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                  Quick Scratchpad & Sprint Notes
+                </h3>
+                <span class="badge badge-subtle">Auto-saved</span>
+              </div>
+              <textarea id="scratchpad-textarea" style="flex: 1; min-height: 280px; background: var(--bg-input); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; color: var(--text-primary); font-family: monospace; font-size: 0.88rem; line-height: 1.6; resize: vertical;" placeholder="Jot down quick lecture notes, algorithm edge cases, interview tips..."></textarea>
+
+              <div style="margin-top: 1rem;">
+                <h4 style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Recent Focus Sessions</h4>
+                <div id="focus-sessions-log"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VIEW: SETTINGS & BACKUP ================= -->
+        <section id="view-settings" class="view-section">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Settings & Data Management</h1>
+              <p class="view-subtitle">Configure your student profile, degree targets, local data backups, and demo data.</p>
+            </div>
+          </div>
+
+          <div class="grid-2col">
+            <!-- Profile Settings -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Student Profile</h3>
+              </div>
+              <form onsubmit="event.preventDefault(); collegeApp.saveProfileSettings();" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="settings-profile-name" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">University / College Name</label>
+                  <input type="text" class="form-control" id="settings-profile-college" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Degree & Major</label>
+                  <input type="text" class="form-control" id="settings-profile-degree" required>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Current Semester</label>
+                    <input type="number" class="form-control" id="settings-profile-sem" min="1" max="12" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Roll Number</label>
+                    <input type="text" class="form-control" id="settings-profile-roll">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Target Attendance (%)</label>
+                    <input type="number" class="form-control" id="settings-target-attendance" min="50" max="100" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Target CGPA (out of 10)</label>
+                    <input type="number" step="0.01" class="form-control" id="settings-target-cgpa" min="5.0" max="10.0" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 0.5rem;">
+                  Save Profile
+                </button>
+              </form>
+            </div>
+
+            <!-- Data Backup, Restore & Demo Reset -->
+            <div class="card" style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div class="card-header">
+                <h3 class="card-title">LocalStorage & Cloud-Free Backups</h3>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                All your CollegeOS data is saved instantly and securely in your browser's LocalStorage. You can export a full JSON backup to move between devices.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <button class="btn btn-secondary" onclick="collegeApp.exportDataBackup()">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Export Full Backup (JSON)
+                </button>
+
+                <label class="btn btn-secondary" style="cursor: pointer;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                  Import Backup File
+                  <input type="file" accept=".json" style="display: none;" onchange="collegeApp.importDataBackup(this)">
+                </label>
+              </div>
+
+              <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                <button class="btn btn-secondary" onclick="collegeApp.restoreDefaultDemoData()">
+                  ⚡ Load Comprehensive Demo Student Data (CSE 5th Sem)
+                </button>
+                <button class="btn btn-danger btn-sm" style="align-self: flex-start;" onclick="collegeApp.clearAllStudentData()">
+                  Clear All Data
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <div class="mobile-nav-bar">
+      <div class="mobile-nav-item active" data-view-target="dashboard">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Home</span>
+      </div>
+      <div class="mobile-nav-item" data-view-target="timetable">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+        <span>Schedule</span>
+      </div>
+      <div class="mobile-nav-item" data-view-target="attendance">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 11 18 13 22 9"></polyline><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+        <span>Bunk</span>
+      </div>
+      <div class="mobile-nav-item" data-view-target="assignments">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        <span>Tasks</span>
+      </div>
+      <div class="mobile-nav-item" data-view-target="focus">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Focus</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= MODALS CONTAINER ================= -->
+
+  <!-- Command Palette Modal (Cmd+K) -->
+  <div class="modal-overlay" id="command-palette-modal">
+    <div class="modal-content command-palette-modal">
+      <div class="command-search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="command-search-input" id="command-palette-input" placeholder="Type a command, course, or page to jump...">
+        <span class="kbd-shortcut">ESC</span>
+      </div>
+      <div class="command-results-list" id="command-palette-results"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Add Subject -->
+  <div class="modal-overlay" id="modal-add-subject">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add New Course / Subject</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-subject" onsubmit="collegeApp.submitAddSubject(event)">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Course Code</label>
+              <input type="text" class="form-control" id="sub-code-input" placeholder="e.g. CS501" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Credits</label>
+              <input type="number" class="form-control" id="sub-credits-input" value="4" min="1" max="10" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject Name</label>
+            <input type="text" class="form-control" id="sub-name-input" placeholder="e.g. Operating Systems" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Instructor / Professor</label>
+            <input type="text" class="form-control" id="sub-instructor-input" placeholder="e.g. Dr. Vance">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Classes Attended</label>
+              <input type="number" class="form-control" id="sub-present-input" value="0" min="0">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Conducted</label>
+              <input type="number" class="form-control" id="sub-total-input" value="0" min="0">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Target Attendance (%)</label>
+              <input type="number" class="form-control" id="sub-target-input" value="75" min="50" max="100">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Color Accent</label>
+              <input type="color" class="form-control" id="sub-color-input" value="#6366f1" style="height: 42px; padding: 2px;">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Subject</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Attendance -->
+  <div class="modal-overlay" id="modal-edit-attendance">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="edit-att-title">Adjust Attendance Numbers</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <form onsubmit="collegeApp.submitEditAttendance(event)">
+        <input type="hidden" id="edit-att-sub-id">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Present Classes</label>
+              <input type="number" class="form-control" id="edit-att-present" min="0" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Classes</label>
+              <input type="number" class="form-control" id="edit-att-total" min="0" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Target Threshold (%)</label>
+            <input type="number" class="form-control" id="edit-att-target" min="50" max="100" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add Timetable Slot -->
+  <div class="modal-overlay" id="modal-add-timetable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add Timetable Class Slot</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-timetable" onsubmit="collegeApp.submitAddTimetableSlot(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Day of Week</label>
+            <select class="form-control" id="tt-day-select" required>
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+              <option value="6">Saturday</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Course / Subject</label>
+            <select class="form-control" id="tt-subject-select" required></select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Start Time</label>
+              <input type="time" class="form-control" id="tt-start-time" value="09:00" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">End Time</label>
+              <input type="time" class="form-control" id="tt-end-time" value="10:00" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Room / Lab</label>
+              <input type="text" class="form-control" id="tt-room-input" placeholder="e.g. LH-302" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Session Type</label>
+              <select class="form-control" id="tt-type-select">
+                <option value="Lecture">Lecture</option>
+                <option value="Lab">Lab</option>
+                <option value="Tutorial">Tutorial</option>
+                <option value="Seminar">Seminar</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Schedule Class</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add Assignment -->
+  <div class="modal-overlay" id="modal-add-assignment">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create New Assignment</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-assignment" onsubmit="collegeApp.submitAddAssignment(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Assignment Title</label>
+            <input type="text" class="form-control" id="asg-title-input" placeholder="e.g. Dijkstra Shortest Path Implementation" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Course</label>
+              <select class="form-control" id="asg-subject-select" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Priority</label>
+              <select class="form-control" id="asg-priority-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent 🔥</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Due Date & Time</label>
+              <input type="datetime-local" class="form-control" id="asg-due-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Max Marks / Weight</label>
+              <input type="text" class="form-control" id="asg-marks-input" value="20">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Description / Instructions</label>
+            <textarea class="form-control" id="asg-desc-input" rows="3" placeholder="Notes, submission links, GitHub repo requirements..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Assignment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add Exam -->
+  <div class="modal-overlay" id="modal-add-exam">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Schedule Exam / Test</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-exam" onsubmit="collegeApp.submitAddExam(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Exam Title</label>
+            <input type="text" class="form-control" id="exam-title-input" placeholder="e.g. Mid-Term Written Evaluation" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Course</label>
+              <select class="form-control" id="exam-subject-select" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date & Time</label>
+              <input type="datetime-local" class="form-control" id="exam-date-input" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Room / Hall</label>
+              <input type="text" class="form-control" id="exam-room-input" placeholder="e.g. LH-201" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Weightage (%)</label>
+              <input type="number" class="form-control" id="exam-weightage-input" value="30">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Duration (Minutes)</label>
+              <input type="number" class="form-control" id="exam-duration-input" value="120">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target Score</label>
+              <input type="number" class="form-control" id="exam-target-input" value="25">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Topics to Revise (comma separated)</label>
+            <input type="text" class="form-control" id="exam-topics-input" placeholder="e.g. Paging, Virtual Memory, Deadlocks">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Exam</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add Placement Application -->
+  <div class="modal-overlay" id="modal-add-placement">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Log Placement Application</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <form id="form-add-placement" onsubmit="collegeApp.submitAddPlacement(event)">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Company Name</label>
+              <input type="text" class="form-control" id="place-company-input" placeholder="e.g. Stripe, Google, Microsoft" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role Title</label>
+              <input type="text" class="form-control" id="place-role-input" placeholder="e.g. SDE-1 / SWE Intern" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Compensation / CTC</label>
+              <input type="text" class="form-control" id="place-comp-input" placeholder="e.g. ₹32 LPA">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Location</label>
+              <input type="text" class="form-control" id="place-loc-input" placeholder="e.g. Bengaluru / Remote">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Pipeline Stage</label>
+              <select class="form-control" id="place-status-select">
+                <option value="wishlist">Wishlist</option>
+                <option value="applied" selected>Applied</option>
+                <option value="assessment">Online Assessment</option>
+                <option value="interview">Technical Interview</option>
+                <option value="offer">Offer Received 🎉</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Current Round</label>
+              <input type="text" class="form-control" id="place-round-input" placeholder="e.g. DSA Round 1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes & Prep Strategy</label>
+            <textarea class="form-control" id="place-notes-input" rows="2" placeholder="Referral senior name, topics asked, recruiter contact..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Keyboard Shortcuts Help (?) -->
+  <div class="modal-overlay" id="modal-shortcuts">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Keyboard Shortcuts</h3>
+        <button class="icon-btn modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" style="font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Command Palette (Search anything)</span>
+          <span class="kbd-shortcut">⌘ K / Ctrl K</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Dashboard</span>
+          <span class="kbd-shortcut">1</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Timetable</span>
+          <span class="kbd-shortcut">2</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Attendance & Bunk Predictor</span>
+          <span class="kbd-shortcut">3</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Academics & CGPA</span>
+          <span class="kbd-shortcut">4</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Assignments Kanban</span>
+          <span class="kbd-shortcut">5</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Exams Schedule</span>
+          <span class="kbd-shortcut">6</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Placements & Career</span>
+          <span class="kbd-shortcut">7</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-subtle);">
+          <span>Jump to Focus & Pomodoro</span>
+          <span class="kbd-shortcut">8</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary modal-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

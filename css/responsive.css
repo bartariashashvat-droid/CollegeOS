@@ -1,0 +1,179 @@
+/* ==========================================================================
+   CollegeOS - Responsive & Media Query System
+   Fluid adaptability for Mobile, Tablet, Desktop, and Print
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Bar (Hidden on desktop) */
+.mobile-nav-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  z-index: 50;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  gap: 0.2rem;
+}
+
+.mobile-nav-item.active {
+  color: var(--primary);
+}
+
+.mobile-sidebar-toggle {
+  display: none;
+}
+
+/* Tablet Breakpoint (<= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .grid-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2col, .grid-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .kanban-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .command-bar-btn {
+    min-width: 160px;
+  }
+}
+
+/* Mobile Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  /* Hide Desktop Sidebar by default, allow drawer overlay */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+    padding-bottom: 70px; /* space for mobile bottom nav */
+  }
+
+  .mobile-sidebar-toggle {
+    display: flex;
+  }
+
+  .mobile-nav-bar {
+    display: flex;
+  }
+
+  .command-bar-btn span:not(.kbd-shortcut) {
+    display: none;
+  }
+
+  .command-bar-btn {
+    min-width: auto;
+    padding: 0.45rem 0.65rem;
+  }
+
+  .top-header {
+    padding: 0 1rem;
+  }
+
+  .content-body {
+    padding: 1rem;
+  }
+
+  .view-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .view-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .grid-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .next-class-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .attendance-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .slot-subject-block {
+    padding: 0 0.75rem;
+  }
+
+  .timetable-slot-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+
+  .pomodoro-timer-display {
+    font-size: 3.5rem;
+  }
+}
+
+/* Print Optimization */
+@media print {
+  .sidebar, .top-header, .mobile-nav-bar, .attendance-actions, .btn, .modal-overlay {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .card {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
